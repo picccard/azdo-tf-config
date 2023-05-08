@@ -44,7 +44,7 @@ resource "azuredevops_branch_policy_build_validation" "alz_accelerator_pr_1" {
 
     scope {
       repository_id  = azuredevops_git_repository.azurelandingzone.id
-      repository_ref = "refs/heads/accelerator-ado"
+      repository_ref = azuredevops_git_repository.azurelandingzone.default_branch
       match_type     = "Exact"
     }
   }
@@ -62,7 +62,7 @@ resource "azuredevops_branch_policy_build_validation" "alz_accelerator_pr_2" {
 
     scope {
       repository_id  = azuredevops_git_repository.azurelandingzone.id
-      repository_ref = "refs/heads/accelerator-ado"
+      repository_ref = azuredevops_git_repository.azurelandingzone.default_branch
       match_type     = "Exact"
     }
   }
