@@ -11,24 +11,6 @@ resource "azuredevops_branch_policy_work_item_linking" "default_branch_policy_wo
 }
 
 
-resource "azuredevops_branch_policy_build_validation" "management_groups" {
-  project_id = azuredevops_project.azure_iac_bicep.id
-  enabled    = false
-  blocking   = true
-
-  settings {
-    display_name        = "01 Management Groups"
-    build_definition_id = azuredevops_build_definition.management_groups.id
-
-    scope {
-      repository_id  = azuredevops_git_repository.azurelandingzone.id
-      repository_ref = azuredevops_git_repository.azurelandingzone.default_branch
-      match_type     = "Exact"
-    }
-  }
-}
-
-
 resource "azuredevops_branch_policy_build_validation" "alz_accelerator_pr_1" {
   project_id = azuredevops_project.azure_iac_bicep.id
   enabled    = true
