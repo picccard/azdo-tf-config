@@ -28,7 +28,7 @@ resource "azuredevops_build_definition" "picccard_dotnet" {
 resource "azuredevops_build_definition" "azfw_start" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "Az Firewall  - Start"
-  path       = "\\Az Firewall"
+  path       = azuredevops_build_folder.az_firewall.path
 
   ci_trigger {
     use_yaml = true
@@ -46,7 +46,7 @@ resource "azuredevops_build_definition" "azfw_start" {
 resource "azuredevops_build_definition" "azfw_stop" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "Az Firewall - Stop"
-  path       = "\\Az Firewall"
+  path       = azuredevops_build_folder.az_firewall.path
 
   ci_trigger {
     use_yaml = true
@@ -82,7 +82,7 @@ resource "azuredevops_build_definition" "az_bastion_delete" {
 resource "azuredevops_build_definition" "alz_accelerator1" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "ALZ - Accelerator 1"
-  path       = "\\ALZ - Accelerator"
+  path       = azuredevops_build_folder.alz_accelerator.path
 
   ci_trigger {
     use_yaml = true
@@ -100,7 +100,7 @@ resource "azuredevops_build_definition" "alz_accelerator1" {
 resource "azuredevops_build_definition" "alz_accelerator2" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "ALZ - Accelerator 2"
-  path       = "\\ALZ - Accelerator"
+  path       = azuredevops_build_folder.alz_accelerator.path
 
   ci_trigger {
     use_yaml = true
@@ -118,7 +118,7 @@ resource "azuredevops_build_definition" "alz_accelerator2" {
 resource "azuredevops_build_definition" "alz_accelerator3" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "ALZ - Accelerator 3"
-  path       = "\\ALZ - Accelerator"
+  path       = azuredevops_build_folder.alz_accelerator.path
 
   ci_trigger {
     use_yaml = true
@@ -136,7 +136,7 @@ resource "azuredevops_build_definition" "alz_accelerator3" {
 resource "azuredevops_build_definition" "alz_accelerator4a" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "ALZ - Accelerator 4a"
-  path       = "\\ALZ - Accelerator"
+  path       = azuredevops_build_folder.alz_accelerator.path
 
   ci_trigger {
     use_yaml = true
@@ -154,7 +154,7 @@ resource "azuredevops_build_definition" "alz_accelerator4a" {
 resource "azuredevops_build_definition" "alz_accelerator_pr_1" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "ALZ - Accelerator PR 1"
-  path       = "\\ALZ - Accelerator"
+  path       = azuredevops_build_folder.alz_accelerator.path
 
   ci_trigger {
     use_yaml = true
@@ -172,7 +172,7 @@ resource "azuredevops_build_definition" "alz_accelerator_pr_1" {
 resource "azuredevops_build_definition" "alz_accelerator_pr_2" {
   project_id = azuredevops_project.azure_iac_bicep.id
   name       = "ALZ - Accelerator PR 2"
-  path       = "\\ALZ - Accelerator"
+  path       = azuredevops_build_folder.alz_accelerator.path
 
   ci_trigger {
     use_yaml = true
