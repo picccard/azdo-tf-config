@@ -20,7 +20,7 @@ resource "azuredevops_build_definition" "picccard_dotnet" {
     repo_id               = "picccard/dotnet"
     branch_name           = "main"
     yml_path              = "azure-pipelines.yml"
-    service_connection_id = "40361aa1-37bc-409b-9b42-747f7812501c"
+    service_connection_id = azuredevops_serviceendpoint_github.github.id
   }
 }
 
