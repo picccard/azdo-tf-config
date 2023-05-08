@@ -28,7 +28,7 @@ jobs:
         run: |
           export ARM_ACCESS_KEY=${{ secrets.BACKEND_ACCESS_KEY }}
           export TF_VAR_azdo_pat=${{ secrets.AZDO_PAT }}
-          export TF_VAR_azdo_url={{ vars.AZDO_URL }}
+          export TF_VAR_azdo_url=${{ vars.AZDO_URL }}
           terraform init \
             -backend-config="resource_group_name=${{ vars.BACKEND_RG }}" \
             -backend-config="storage_account_name=${{ vars.BACKEND_ST }}" \
